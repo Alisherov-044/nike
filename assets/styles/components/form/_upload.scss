@@ -1,0 +1,42 @@
+.upload {
+  position: relative;
+  width: 200px;
+  height: 147px;
+  border: 1px solid $color-white--smoke;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover {
+    .upload__button--wrapper {
+      background-color: $color-black--light;
+    }
+  }
+
+  &__placeholder {
+    @include font(16px, 120%, 400);
+    color: $color-grey--regular;
+  }
+
+  &__button--wrapper {
+    @include absolute-center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $color-black--regular;
+    transition: all .2s ease;
+  }
+
+  &__button--hl {
+    @include absolute-center;
+    width: 30px;
+    height: 1px;
+    background-color: $color-white--regular;
+  }
+
+  &__button--vl {
+    @include absolute-center;
+    height: 30px;
+    width: 1px;
+    background-color: $color-white--regular;
+  }
+}

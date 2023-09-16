@@ -1,0 +1,38 @@
+.bg__blur {
+  &.open {
+    .drawer {
+      transform: translateX(0);
+    }
+  }
+
+  .drawer { 
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 320px;
+    width: 100%;
+    min-height: 100vh;
+    padding-block: 70px;
+    padding-inline: 36px;
+    background-color: $color-white--regular;
+    transform: translateX(100%);
+    transition: all .2s ease;
+  }
+
+  .close__icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .admin__navbar {
+    &--links {
+      @include d-flex(column, unset, unset, 30px);
+    }
+
+    &--link a {
+      @include font(18px, 120%, 500);
+      color: $color-black--regular;
+    }
+  }
+}

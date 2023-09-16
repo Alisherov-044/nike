@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    @include d-flex(column, unset, unset);
+    @include full-relative;
+    scroll-behavior: smooth;
+}
+
+main {
+    height: 100%;
+    flex: 1 1 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+button,
+input,
+textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.bg__blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    z-index: -10;
+    transition: opacity .2s ease, backdrop-filter .2s ease;
+
+    &.open {
+        background-color: rgba($color: $color-black--regular, $alpha: .3);
+        backdrop-filter: blur(3px);
+        opacity: 1;
+        z-index: 10;
+    }
+}
+
+.container {
+    position: relative;
+    max-width: calc(1776px + 40px);
+    width: 100%;
+    padding-inline: 20px;
+    margin-inline: auto;
+
+    &.sm {
+        max-width: calc(1076px + 40px);
+    }
+}

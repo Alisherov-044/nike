@@ -1,0 +1,45 @@
+.button {
+  &.primary,
+  &.secondary,
+  &.secondary-outline {
+    @include font(16px, 120%, 400);
+    padding: 6px 20px;
+    border-radius: 30px;
+    transition: all .3s ease;
+    text-transform: capitalize;
+  }
+
+  &.primary {
+    background-color: $color-black--regular;
+    color: $color-white--regular;
+
+    &:hover {
+      background-color: $color-grey--regular;
+    }
+  }
+
+  &.secondary,
+  &.secondary-outline {
+    background-color: $color-white--regular;
+    color: $color-black--regular;
+
+    &:hover {
+      background-color: $color-grey--light;
+    }
+  }
+
+  &.secondary-outline {
+    border: 1px solid $color-grey--light;
+  }
+
+  &.primary-input {
+    @include d-flex(row, center, center);
+    @include font(16px, 120%, 400);
+    width: 325px;
+    height: 40px;
+    text-transform: uppercase;
+    background-color: $color-black--regular;
+    color: $color-white--regular;
+    border-radius: 3px;
+  }
+}

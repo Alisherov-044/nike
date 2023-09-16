@@ -1,0 +1,52 @@
+.textarea__wrapper {
+  @include d-flex(column, unset, unset, 5px);
+  position: relative;
+
+  .textarea {
+    &.primary {
+      @include font(14px, 110%, 400);
+      width: 325px;
+      height: 147px;
+      resize: none;
+      padding-block: 10px;
+      padding-inline: 16px;
+      border: 1px solid $color-white--smoke;
+      color: $color-grey--light;
+      background-color: $color-white--regular;
+      
+      &::placeholder {
+        @include font(14px, 110%, 400);
+        text-transform: capitalize;
+        color: $color-grey--regular;
+      }
+      
+      &:focus {
+        &::placeholder {
+          color: $color-grey--light;
+        }
+      }
+    }
+
+    &.error {
+      border-color: $color-red;
+      color: $color-red;
+
+      &::placeholder {
+        text-transform: capitalize;
+        color: $color-red;
+      }
+
+      &:focus {
+        &::placeholder {
+          color: $color-red;
+        }
+      }
+    }
+  }
+
+  .form__error {
+    @include font(12px, 150%, 400);
+    margin-inline: 16px;
+    color: $color-red;
+  }
+}

@@ -1,0 +1,112 @@
+.input__wrapper {
+  @include d-flex(column, unset, unset, 5px);
+  position: relative;
+
+  &.search {
+    .search-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: inherit;
+      z-index: 2;
+
+      &:hover {
+        background-color: $color-white--smoke;
+      }
+    }
+  }
+
+  .input {
+    &.primary,
+    &.secondary {
+      @include d-flex(row, center, unset);
+      @include font(14px, 110%, 400);
+      padding-inline: 16px;
+      background-color: $color-white--regular;
+    }
+
+    &.primary {
+      width: 325px;
+      height: 40px;
+      border: 1px solid $color-white--smoke;
+      color: $color-grey--light;
+      
+      &::placeholder {
+        @include font(14px, 110%, 400);
+        text-transform: capitalize;
+        color: $color-grey--regular;
+      }
+      
+      &:focus {
+        &::placeholder {
+          color: $color-grey--light;
+        }
+      }
+    }
+
+    &.secondary {
+      width: 460px;
+      height: 56px;
+      border: 1px solid $color-black--regular;
+      color: $color-black--regular;
+      border-radius: 8px;
+
+      &::placeholder {
+        @include font(14px, 110%, 400);
+        text-transform: capitalize;
+        color: $color-black--regular;
+      }
+    }
+
+    &.search {
+      @include d-flex(row, center, center);
+      @include font(16px, 150%, 400);
+      position: relative;
+      width: 180px;
+      height: 40px;
+      padding-left: 50px;
+      padding-right: 12px;
+      border-radius: 100px;
+      color: $color-grey--regular;
+      background-color: $color-disabled;
+      transition: all .2s ease;
+
+      &::placeholder {
+        text-transform: capitalize;
+        color: $color-grey--light;
+      }
+
+      &:hover {
+        background-color: $color-white--smoke;
+      }
+
+      &:focus {
+        &::placeholder {
+          color: $color-grey--regular;
+        }
+      }
+    }
+
+    &.error {
+      border-color: $color-red;
+      color: $color-red;
+
+      &::placeholder {
+        text-transform: capitalize;
+        color: $color-red;
+      }
+
+      &:focus {
+        &::placeholder {
+          color: $color-red;
+        }
+      }
+    }
+  }
+
+  .form__error {
+    @include font(12px, 150%, 400);
+    margin-inline: 16px;
+    color: $color-red;
+  }
+}

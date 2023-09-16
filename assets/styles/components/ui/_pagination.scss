@@ -1,0 +1,28 @@
+.pagination {
+  @include d-flex(row, center, unset, 20px);
+  position: relative;
+
+  &__pages {
+    @include d-flex(row, center, unset);
+  }
+
+  &__page {
+    @include d-flex(row, center, center);
+    width: 35px;
+    height: 35px;
+    color: $color-black--regular;
+    border-radius: 50%;
+    transition: all .2s ease;
+    cursor: pointer;
+    
+    &.active,
+    &:hover {
+      background-color: $color-disabled;
+    }
+  }
+
+  &__arrow--single,
+  &__arrow--double {
+    cursor: pointer;
+  }
+}

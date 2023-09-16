@@ -1,0 +1,42 @@
+.table {
+  @include d-flex(column, unset, unset);
+  max-width: 1650px;
+  width: 100%;
+
+  &__head {
+    background-color: $color-disabled;
+    margin-bottom: 25px;
+  }
+
+  &__body {
+    @include d-flex(column, unset, unset);
+
+    .table__row {
+      height: 60px;
+    }
+  }
+
+  &__row {
+    @include d-flex(row, center, space-between);
+    width: 100%;
+    height: 40px;
+    padding-inline: 20px;
+    transition: all .2s ease;
+
+    &:hover {
+      background-color: $color-disabled;
+    }
+  }
+
+  &__heading,
+  &__data {
+    @include d-flex(row, center, center);
+    @include font(16px, 110%, 400);
+    height: 100%;
+    color: $color-black--regular;
+
+    img {
+      height: 50px;
+    }
+  }
+}

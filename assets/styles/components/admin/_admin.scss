@@ -1,0 +1,41 @@
+@import './layout/header';
+@import './layout/navbarMobile';
+
+.admin__pages--section__header {
+  @include d-flex(column, center, center, 20px);
+  width: 100%;
+  margin-top: 30px;
+}
+
+.admin__pages--title {
+  @include font(52px, 90%, 800);
+  color: $color-black--regular;
+
+  @include media(1150) {
+    @include font(42px, 100%, 700);
+  }
+}
+
+.admin__table--wrapper {
+  position: relative;
+  max-width: 1650px;
+  width: 100%;
+  margin: 0 auto;
+
+  .pagination {
+    float: right;
+    padding-block: 30px;
+    margin-right: 20px;
+
+    @include media(510) {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 100%);
+    }
+  }
+}
+
+.admin__table {
+  margin-top: 40px;
+}

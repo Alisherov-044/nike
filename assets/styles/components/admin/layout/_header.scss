@@ -1,0 +1,76 @@
+.admin__header {
+  position: relative;
+  width: 100%;
+  height: 64px;
+  padding-inline: 36px;
+
+  @include media(750) {
+    padding-inline: 10px;
+  }
+
+  .logo svg {
+    width: 64px;
+    height: 64px;
+  }
+
+  &--navbar {
+    @include d-flex(row, center, space-between);
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--links {
+    @include d-flex(row, center, unset, 24px);
+
+    @include media(750) {
+      display: none
+    }
+  }
+
+  &--link a {
+    @include font(16px, 150%, 500);
+    position: relative;
+    color: $color-black--regular;
+    text-transform: capitalize;
+    transition: all .2s ease;
+
+    &.active {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      color: $color-grey--regular;
+    }
+  }
+
+  &--actions {
+    @include d-flex(row, center, unset, 12px);
+
+    .user__icon {
+      background-color: $color-white--smoke;
+    }
+
+    .burger__icon {
+      display: none;
+
+      @include media(750) {
+        display: flex;
+      }
+    }
+  }
+
+  .hr {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 890px;
+    height: 1px;
+    background-color: $color-black--regular;
+
+    @include media(1150) {
+      width: 100vw;
+    }
+  }
+}
