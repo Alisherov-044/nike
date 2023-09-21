@@ -1,0 +1,31 @@
+.admin__categories {
+  &--form {
+    @include d-flex(row, unset, unset, 50px, wrap);
+    position: relative;
+    max-width: 1075px;
+
+    @include media(1075) {
+      max-width: 700px;
+
+      .sm-full {
+        width: 100%;
+
+        .input,
+        .select,
+        .textarea,
+        .upload {
+          width: 100%;
+        }
+      }
+    }
+
+    @include media(700) {
+      max-width: 325px;
+      gap: 20px;
+
+      .upload {
+        width: 100%;
+      }
+    }
+  }
+}

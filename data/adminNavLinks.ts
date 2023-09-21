@@ -1,6 +1,6 @@
-import { AdminNavLinksInterface } from "@/interface";
+import { AdminNavLinkInterface } from "@/interface";
 
-export const adminNavLinks: AdminNavLinksInterface[] = [
+export const adminNavLinks: AdminNavLinkInterface[] = [
   {
     id: 1,
     label: "Products",

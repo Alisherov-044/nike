@@ -6,14 +6,19 @@
 
 html,
 body {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+#root {
     @include d-flex(column, unset, unset);
     @include full-relative;
-    scroll-behavior: smooth;
 }
 
 main {
     height: 100%;
     flex: 1 1 auto;
+    padding-block: 50px;
 }
 
 a {
@@ -58,12 +63,7 @@ button {
 
 .container {
     position: relative;
-    max-width: calc(1776px + 40px);
-    width: 100%;
-    padding-inline: 20px;
+    width: 100vw;
+    padding-inline: 48px;
     margin-inline: auto;
-
-    &.sm {
-        max-width: calc(1076px + 40px);
-    }
 }

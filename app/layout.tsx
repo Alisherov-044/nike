@@ -2,6 +2,7 @@ import "@/assets/styles/main.scss";
 import type { Metadata } from "next";
 import { LayoutInterface } from "@/interface";
 import { Providers } from "@/redux/Provider";
+import { Footer, Header } from "@/components";
 
 export const metadata: Metadata = {
   title: "Nike. Just Do It",
@@ -20,7 +21,11 @@ export default function RootLayout({ children }: LayoutInterface) {
         />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <div id="root">
+          <Header />
+          <Providers>{children}</Providers>
+          <Footer />
+        </div>
       </body>
     </html>
   );

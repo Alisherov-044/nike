@@ -1,24 +1,28 @@
 "use client";
+import { useSelect } from "@/hooks";
 import { useEffect, useState } from "react";
 import { SelectInterface } from "@/interface";
-import { useSelect } from "@/hooks";
 
 export function Select({
   placeholder,
   className,
   options,
   error,
+  nested,
+  name,
+  setValue: setFormValue,
   variant = "primary",
   value = "itself",
   label = "itself",
 }: SelectInterface) {
+  const [hoveredOption, setHoveredOption] = useState<any>(undefined);
   const [selectedValue, setSelectedValue] = useState<any>(undefined);
   const [selectedLabel, setSelectedLabel] = useState<any>(undefined);
-  const { isOpen, toggle } = useSelect();
+  const { isOpen, toggle, close } = useSelect();
 
-  useEffect(() => {
-    console.log(selectedValue);
-  }, [selectedValue]);
+  const clear = () => {
+    setHoveredOption(undefined);
+  };
 
   const setValue = (selectedOption: any) => {
     if (value === "itself") {
@@ -28,7 +32,15 @@ export function Select({
       setSelectedValue(selectedOption[value]);
       setSelectedLabel(selectedOption[label]);
     }
+
+    close(clear);
   };
+
+  useEffect(() => {
+    if (setFormValue && name) {
+      setFormValue(name, selectedValue);
+    }
+  }, [selectedValue]);
 
   return (
     <div className={`select__wrapper ${isOpen ? "open" : ""}`}>
@@ -36,19 +48,58 @@ export function Select({
         className={`select ${variant} ${className || ""} ${
           error ? "error" : ""
         }`}
-        onClick={toggle}
       >
-        <span className="select__placeholder">
+        <span className="select__placeholder" onClick={() => toggle(clear)}>
           {selectedLabel || placeholder}
         </span>
-        <div className="options">
+        <div className={`options ${hoveredOption ? "close" : ""}`}>
           {options.map((option, index) => (
             <span
-              className="option"
-              onClick={() => setValue(option)}
+              className={`option ${
+                nested && option[nested]?.length ? "nested" : ""
+              }`}
+              onMouseOver={() =>
+                setHoveredOption(option?.id ? option.id : option)
+              }
+              onMouseOut={() => setHoveredOption(undefined)}
               key={index}
             >
-              {label === "itself" ? option : option[label]}
+              <span className="label" onClick={() => setValue(option)}>
+                {label === "itself" ? option : option[label]}
+              </span>
+              {nested && option[nested]?.length ? (
+                <div
+                  className="nested__option--button"
+                  onClick={() =>
+                    setHoveredOption(option?.id ? option.id : option)
+                  }
+                />
+              ) : null}
+              {nested && option[nested]?.length ? (
+                <div
+                  className={`children ${
+                    option === hoveredOption || option?.id === hoveredOption
+                      ? "open"
+                      : ""
+                  }`}
+                >
+                  <span
+                    className="option button--back"
+                    onClick={() => setHoveredOption(undefined)}
+                  >
+                    back
+                  </span>
+                  {option[nested].map((child: any, index: number) => (
+                    <span
+                      className="option"
+                      onClick={() => setValue(child)}
+                      key={index}
+                    >
+                      {label === "itself" ? child : child[label]}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
             </span>
           ))}
         </div>

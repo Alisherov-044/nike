@@ -33,7 +33,7 @@
   }
 
   &.primary-input {
-    @include d-flex(row, center, center);
+    @include d-flex-center;
     @include font(16px, 120%, 400);
     width: 325px;
     height: 40px;

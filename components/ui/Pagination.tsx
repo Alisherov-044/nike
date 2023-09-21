@@ -16,7 +16,7 @@ export function Pagination({
   lastPage,
   paginate,
 }: PaginationInterface) {
-  return (
+  return pages.length > 1 ? (
     <div className="pagination">
       <ArrowLeftLgDoubleIcon
         className="pagination__arrow--double"
@@ -48,5 +48,5 @@ export function Pagination({
         onClick={() => paginate(lastPage)}
       />
     </div>
-  );
+  ) : null;
 }

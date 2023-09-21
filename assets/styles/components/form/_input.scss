@@ -59,7 +59,7 @@
     }
 
     &.search {
-      @include d-flex(row, center, center);
+      @include d-flex-center;
       @include font(16px, 150%, 400);
       position: relative;
       width: 180px;

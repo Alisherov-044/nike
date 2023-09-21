@@ -5,6 +5,7 @@
 
 /* components */
 @import './components/ui/button';
+@import './components/ui/swiperButton';
 @import './components/ui/icon';
 @import './components/form/input';
 @import './components/form/textarea';
@@ -14,6 +15,11 @@
 @import './components/ui/pagination';
 @import './components/ui/modal';
 @import './components/admin/admin';
+@import './components/layout/header';
+@import './components/layout/footer';
+@import './components/card/productCard';
+@import './components/swiper/productsSwiper';
 
 /* pages */
 @import './pages/admin/products';
+@import './pages/admin/categories';

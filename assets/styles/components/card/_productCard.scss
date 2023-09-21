@@ -1,0 +1,31 @@
+.product__card {
+  @include d-flex(column, unset, unset, 12px);
+  position: relative;
+  width: 596px;
+
+  &--image {
+    width: 596px;
+    height: 596px;
+  }
+
+  &--content {
+    @include d-flex(column, unset, unset);
+    padding-right: 16px;
+
+    &-row {
+      @include d-flex(row, center, space-between);
+    }
+  }
+
+  &--name,
+  &--price {
+    @include font(16px, 120%, 500);
+    color: $color-black--regular;
+  }
+
+  &--category {
+    @include font(16px, 150%, 500);
+    color: $color-grey--regular;
+    margin-top: 2px;
+  }
+}

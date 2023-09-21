@@ -1,5 +1,6 @@
 import { ComponentProps, ReactNode } from "react";
 import { EventsInterface } from ".";
+import { ProductScheme } from "./scheme.interface";
 
 export interface ButtonInterface
   extends Omit<ComponentProps<"button">, "variant" | "className"> {
@@ -31,6 +32,14 @@ export interface InputInterface
   parentClassName?: string;
   type?: string;
   error?: string;
+  register?: any;
+}
+
+export interface FormInterface
+  extends Omit<ComponentProps<"form">, "onSubmit" | "className" | "children"> {
+  onSubmit: (e: any) => void;
+  children: ReactNode;
+  className?: string;
 }
 
 export interface TextareaInterface
@@ -42,6 +51,7 @@ export interface TextareaInterface
   variant?: "primary" | "secondary";
   className?: string;
   error?: string;
+  register?: any;
 }
 
 export interface TableInterface {
@@ -50,6 +60,7 @@ export interface TableInterface {
   className?: string;
   link?: string;
   slug?: "id" | "label" | "slug";
+  nested?: string;
 }
 
 export interface PaginationInterface {
@@ -76,10 +87,14 @@ export interface SelectInterface
   value?: string | "itself";
   label?: string | "itself";
   error?: string;
+  nested?: string;
+  register?: any;
+  setValue?: any;
 }
 
 export interface UploadInterface extends Pick<EventsInterface, "onClick"> {
   placeholder: string;
+  register?: any;
 }
 
 export interface ModalInterface {
@@ -87,4 +102,26 @@ export interface ModalInterface {
   close: () => void;
   children: ReactNode;
   button?: ReactNode;
+}
+
+export interface DropdownInterface {
+  isOpen: boolean;
+  children: ReactNode;
+  className?: string;
+}
+
+export interface ProductCardInterface {
+  product: ProductScheme;
+}
+
+export interface SwiperButtonInterface
+  extends Pick<EventsInterface, "onClick"> {
+  variant?: "md" | "sm";
+  className?: string;
+  direction?: "right" | "left";
+}
+
+export interface ProductsSwiperInterface {
+  products: ProductScheme[];
+  title?: string;
 }

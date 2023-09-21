@@ -7,7 +7,7 @@
   }
 
   &__page {
-    @include d-flex(row, center, center);
+    @include d-flex-center;
     width: 35px;
     height: 35px;
     color: $color-black--regular;

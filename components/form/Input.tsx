@@ -7,8 +7,10 @@ export function Input({
   error,
   icon,
   parentClassName,
+  register,
   type = "text",
   variant = "primary",
+  ...rest
 }: InputInterface) {
   return (
     <div
@@ -23,6 +25,8 @@ export function Input({
         className={`input ${variant} ${className || ""} ${
           error ? "error" : ""
         }`}
+        {...rest}
+        {...register}
       />
       {error ? <span className="form__error">{error}</span> : null}
     </div>

@@ -1,6 +1,6 @@
 .bg__blur {
   .modal {
-    @include d-flex(unset, center, center);
+    @include d-flex-center;
     @include absolute-center;
     max-width: 1650px;
     width: 100%;

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 export function useSelect() {
@@ -7,12 +8,14 @@ export function useSelect() {
     setIsOpen(true);
   };
 
-  const close = () => {
+  const close = (fn?: () => void) => {
     setIsOpen(false);
+    fn && fn();
   };
 
-  const toggle = () => {
+  const toggle = (fn?: () => void) => {
     setIsOpen((isOpen) => !isOpen);
+    fn && fn();
   };
 
   return { isOpen, open, close, toggle };

@@ -1,0 +1,28 @@
+.products__section {
+  @include d-flex(column, unset, unset, 12px);
+  position: relative;
+
+  &--header {
+    @include d-flex(row, center, space-between, 12px);
+    padding-inline: 48px;
+  }
+
+  &--title {
+    @include font(26px, 120%, 500);
+    color: $color-black--regular;
+  }
+
+  .products__swiper--buttons {
+    @include d-flex(row, center, unset, 12px);
+  }
+
+  .products__swiper--container {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  .products__swiper {
+    @include d-flex(row, unset, unset, 12px);
+    padding-left: 48px;
+  }
+}

@@ -1,7 +1,7 @@
 "use client";
-import { useModal, usePagination } from "@/hooks";
 import {
   Button,
+  Form,
   Input,
   Modal,
   Pagination,
@@ -10,6 +10,8 @@ import {
   Textarea,
   Upload,
 } from "@/components";
+import { useModal, usePagination } from "@/hooks";
+import { useForm } from "react-hook-form";
 
 const products = [
   {
@@ -426,6 +428,11 @@ export default function AdminProducts() {
     lastPage,
     paginate,
   } = usePagination(products);
+  const { register, handleSubmit, setValue, reset } = useForm();
+
+  const onSubmit = (e: any) => {
+    console.log(e);
+  };
 
   return (
     <main className="main admin__products">
@@ -453,19 +460,36 @@ export default function AdminProducts() {
           paginate={paginate}
         />
       </div>
-      <Modal isOpen={isOpen} close={close} button={<Button text="Submit" />}>
-        <form className="admin__products--form">
-          <Input placeholder="Name" />
+      <Modal
+        isOpen={isOpen}
+        close={() => close(reset)}
+        button={<Button form="form" text="Submit" />}
+      >
+        <Form
+          id="form"
+          onSubmit={handleSubmit(onSubmit)}
+          className="admin__products--form"
+        >
+          <Input placeholder="Name" register={register("name")} />
           <Select
             placeholder="Category"
             options={currentData}
             value="id"
             label="name"
+            name="category"
+            setValue={setValue}
           />
-          <Input placeholder="Price" parentClassName="sm-full" />
-          <Textarea placeholder="Description" />
-          <Upload placeholder="Image" />
-        </form>
+          <Input
+            placeholder="Price"
+            parentClassName="sm-full"
+            register={register("price")}
+          />
+          <Textarea
+            placeholder="Description"
+            register={register("description")}
+          />
+          <Upload placeholder="Image" register={register("images")} />
+        </Form>
       </Modal>
     </main>
   );

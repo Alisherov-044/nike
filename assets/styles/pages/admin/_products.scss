@@ -1,4 +1,6 @@
 .admin__products {
+  background-color: $color-white--regular;
+
   .table {
     @include media(1150) {
       .description,
@@ -8,12 +10,6 @@
 
       .name {
         width: 50% !important;
-      }
-    }
-
-    @include media(750) {
-      &__row {
-        padding-inline: 0;
       }
     }
   }

@@ -15,6 +15,8 @@ import { ArrowLeftLgIcon } from "./ArrowLeftLg";
 import { ArrowLeftLgDoubleIcon } from "./ArrowLeftLgDouble";
 import { ArrowRightLgIcon } from "./ArrowRightLg";
 import { ArrowRightLgDoubleIcon } from "./ArrowRightLgDouble";
+import { ArrowRightIcon } from "./ArrowRight";
+import { ArrowLeftIcon } from "./ArrowLeft";
 
 export {
   Logo,
@@ -34,4 +36,6 @@ export {
   ArrowLeftLgDoubleIcon,
   ArrowRightLgIcon,
   ArrowRightLgDoubleIcon,
+  ArrowRightIcon,
+  ArrowLeftIcon,
 };
