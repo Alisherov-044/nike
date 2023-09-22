@@ -1,0 +1,56 @@
+.categories__section {
+  @include d-flex(column, unset, unset, 16px);
+  position: relative;
+
+  &--header {
+    padding-inline: 48px;
+  }
+
+  &--title {
+    @include font(26px, 120%, 500);
+    color: $color-black--regular;
+  }
+
+  .categories__swiper--container {
+    position: relative;
+    width: 100vw;
+    height: 335px;
+    overflow-x: hidden;
+  
+    .swiper-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    
+      &-prev {
+        left: 70px;
+      }
+    
+      &-next {
+        right: 70px;
+      }
+    }
+  }
+  
+  .categories__swiper {
+    @include d-flex(row, unset, unset, 16px);
+  
+    &--slide {
+      .category__card {
+        &--index,
+        &--name {
+          display: none;
+        }
+      }
+  
+      &.swiper-slide-active {
+        .category__card {
+          &--index,
+          &--name {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

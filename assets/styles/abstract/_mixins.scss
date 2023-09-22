@@ -7,10 +7,11 @@
     gap: $gap;
 }
 
-@mixin d-flex-center() {
+@mixin d-flex-center($direction: unset) {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: $direction;
 }
 
 @mixin absolute-center($z-index: 1) {

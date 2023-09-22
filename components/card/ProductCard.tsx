@@ -9,7 +9,7 @@ export function ProductCard({ product }: ProductCardInterface) {
   return (
     <Link href={`/products/${slug}`} className="product__card">
       <div className="product__card--image">
-        <img src={images.find((image) => image.isDefault)?.image} />
+        <img src={images.find((image) => image.isDefault)?.image} alt={name} />
       </div>
       <div className="product__card--content">
         <div className="product__card--content-row">

@@ -1,0 +1,21 @@
+.category__card {
+  @include d-flex(column, unset, unset, 10px);
+  position: relative;
+  width: 300px;
+
+  &--index {
+    @include font(16px, 120%, 400);
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    color: $color-white--regular;
+    background-color: rgba($color: $color-black--regular, $alpha: .4);
+  }
+
+  &--name {
+    @include font(16px, 120%, 500);
+    color: $color-grey--regular;
+  }
+}

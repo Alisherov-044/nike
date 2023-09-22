@@ -13,12 +13,12 @@ body {
 #root {
     @include d-flex(column, unset, unset);
     @include full-relative;
+    min-height: 100vh;
 }
 
 main {
     height: 100%;
     flex: 1 1 auto;
-    padding-block: 50px;
 }
 
 a {

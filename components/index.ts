@@ -13,6 +13,7 @@ import { Upload } from "./form/Upload";
 import { Header } from "./layout/Header";
 import { Footer } from "./layout/Footer";
 import { ProductCard } from "./card/ProductCard";
+import { CategoryCard } from "./card/CategoryCard";
 import { ProductsSwiper } from "./swiper/ProductsSwiper";
 import { CategoriesSwiper } from "./swiper/CategoriesSwiper";
 
@@ -32,6 +33,7 @@ export {
   Header,
   Footer,
   ProductCard,
+  CategoryCard,
   ProductsSwiper,
   CategoriesSwiper,
 };

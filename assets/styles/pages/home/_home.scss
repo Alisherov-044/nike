@@ -1,0 +1,56 @@
+.home__page {
+  position: relative;
+
+  .new__arrivals {
+    @include d-flex-center(column);
+    position: relative;
+    width: 100%;
+    height: 58px;
+    background-color: $color-disabled;
+    border-bottom: 1px solid $color-white--smoke;
+
+    &--title {
+      @include font(16px, 150%, 400);
+      color: $color-black--regular;
+    }
+
+    &--link {
+      @include font(12px, 150%, 600);
+      color: $color-black--regular;
+      text-decoration: underline;
+    }
+  }
+
+  .nike-tech {
+    @include d-flex(column, center, space-between);
+    height: 190px;
+    margin-block: 48px;
+
+    &--title {
+      @include font(72px, 90%, 900);
+      color: $color-black--regular;
+      text-transform: uppercase;
+      letter-spacing: -4px;
+    }
+
+    &--description {
+      @include font(20px, 120%, 400);
+      color: $color-black--regular;
+    }
+  }
+
+  .nike-video {
+    width: 100vw;
+    max-height: 995px;
+    min-height: 760px;
+    object-fit: cover;
+  }
+
+  .categories__section {
+    padding-top: 16px;
+  }
+
+  .products__section {
+    padding-top: 16px;
+  }
+}

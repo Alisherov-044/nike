@@ -18,8 +18,11 @@
 @import './components/layout/header';
 @import './components/layout/footer';
 @import './components/card/productCard';
+@import './components/card/categoryCard';
 @import './components/swiper/productsSwiper';
+@import './components/swiper/categoriesSwiper';
 
 /* pages */
+@import './pages/home/home';
 @import './pages/admin/products';
 @import './pages/admin/categories';

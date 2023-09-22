@@ -1,5 +1,6 @@
 "use client";
 import { ButtonInterface } from "@/interface";
+import Link from "next/link";
 
 export function Button({
   text,
@@ -7,17 +8,27 @@ export function Button({
   className,
   icon,
   onClick,
+  href,
   variant = "primary",
   ...rest
 }: ButtonInterface) {
-  return (
-    <button
-      className={`button ${variant} ${className || ""}`}
-      onClick={onClick}
-      {...rest}
-    >
-      {icon ? <span className="button__icon">{icon}</span> : null}
-      {text || children}
-    </button>
-  );
+  if (href) {
+    return (
+      <Link href={href} className={`button ${variant} ${className || ""}`}>
+        {icon ? <span className="button__icon">{icon}</span> : null}
+        {text || children}
+      </Link>
+    );
+  } else {
+    return (
+      <button
+        className={`button ${variant} ${className || ""}`}
+        onClick={onClick}
+        {...rest}
+      >
+        {icon ? <span className="button__icon">{icon}</span> : null}
+        {text || children}
+      </button>
+    );
+  }
 }

@@ -17,11 +17,13 @@ import { AdminNavLinkInterface } from "./data.interface";
 import { HeaderLinkInterface } from "./data.interface";
 import { FooterLinkInterface } from "./data.interface";
 import { ProductsSwiperInterface } from "./components.interface";
+import { CategoriesSwiperInterface } from "./components.interface";
 import { FooterPrivacyLinkInterface } from "./data.interface";
 import { SponserInterface } from "./data.interface";
 import { AdminNavbarMobileInterface } from "./components.interface";
 import { ProviderInterface } from "./redux.interface";
 import { ProductCardInterface } from "./components.interface";
+import { CategoryCardInterface } from "./components.interface";
 
 export type {
   ButtonInterface,
@@ -43,9 +45,11 @@ export type {
   HeaderLinkInterface,
   FooterLinkInterface,
   ProductsSwiperInterface,
+  CategoriesSwiperInterface,
   FooterPrivacyLinkInterface,
   SponserInterface,
   AdminNavbarMobileInterface,
   ProviderInterface,
   ProductCardInterface,
+  CategoryCardInterface,
 };

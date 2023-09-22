@@ -1,6 +1,6 @@
 import { ComponentProps, ReactNode } from "react";
 import { EventsInterface } from ".";
-import { ProductScheme } from "./scheme.interface";
+import { CategoryScheme, ProductScheme } from "./scheme.interface";
 
 export interface ButtonInterface
   extends Omit<ComponentProps<"button">, "variant" | "className"> {
@@ -9,6 +9,7 @@ export interface ButtonInterface
   variant?: "primary" | "secondary" | "secondary-outline" | "primary-input";
   className?: string;
   icon?: ReactNode;
+  href?: string;
   onClick?: () => void;
 }
 
@@ -114,6 +115,12 @@ export interface ProductCardInterface {
   product: ProductScheme;
 }
 
+export interface CategoryCardInterface {
+  category: CategoryScheme;
+  index: number;
+  total: number;
+}
+
 export interface SwiperButtonInterface
   extends Pick<EventsInterface, "onClick"> {
   variant?: "md" | "sm";
@@ -123,5 +130,10 @@ export interface SwiperButtonInterface
 
 export interface ProductsSwiperInterface {
   products: ProductScheme[];
+  title?: string;
+}
+
+export interface CategoriesSwiperInterface {
+  categories: CategoryScheme[];
   title?: string;
 }
