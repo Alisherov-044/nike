@@ -9,6 +9,8 @@ export function useSwiper() {
     isEnd: false,
   });
 
+  const changeSwiper = () => setSwiperChanger((prev) => prev + 1);
+
   useEffect(() => {
     setSwiperPosition({
       isBeginning: swiper ? swiper.isBeginning : true,
@@ -16,5 +18,5 @@ export function useSwiper() {
     });
   }, [swiperChanger]);
 
-  return { swiper, setSwiper, swiperChanger, setSwiperChanger, swiperPosition };
+  return { swiper, setSwiper, changeSwiper, swiperPosition };
 }

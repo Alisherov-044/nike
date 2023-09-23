@@ -24,6 +24,7 @@ import { AdminNavbarMobileInterface } from "./components.interface";
 import { ProviderInterface } from "./redux.interface";
 import { ProductCardInterface } from "./components.interface";
 import { CategoryCardInterface } from "./components.interface";
+import { ScrollPositionInterface } from "./hooks.interface";
 
 export type {
   ButtonInterface,
@@ -52,4 +53,5 @@ export type {
   ProviderInterface,
   ProductCardInterface,
   CategoryCardInterface,
+  ScrollPositionInterface,
 };

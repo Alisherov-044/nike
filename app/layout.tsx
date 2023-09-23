@@ -28,9 +28,11 @@ export default function RootLayout({ children }: LayoutInterface) {
       </head>
       <body className={inter.className}>
         <div id="root">
-          <Header />
-          <Providers>{children}</Providers>
-          <Footer />
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
         </div>
       </body>
     </html>

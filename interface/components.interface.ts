@@ -105,7 +105,8 @@ export interface ModalInterface {
   button?: ReactNode;
 }
 
-export interface DropdownInterface {
+export interface DropdownInterface
+  extends Pick<EventsInterface, "onMouseOver" | "onMouseOut"> {
   isOpen: boolean;
   children: ReactNode;
   className?: string;

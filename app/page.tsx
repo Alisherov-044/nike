@@ -1,8 +1,11 @@
 "use client";
 import Link from "next/link";
+import { useTypedSelector } from "@/hooks";
 import { Button, CategoriesSwiper, ProductsSwiper } from "@/components";
 
 export default function Home() {
+  const { bgBlur } = useTypedSelector((state) => state.layout);
+
   const products = [
     {
       id: 1,
@@ -197,6 +200,7 @@ export default function Home() {
       </Link>
       <CategoriesSwiper categories={categories} />
       <ProductsSwiper products={products} title="Trending This Week" />
+      <div className={`bg__blur ${bgBlur ? "open" : ""}`} />
     </main>
   );
 }

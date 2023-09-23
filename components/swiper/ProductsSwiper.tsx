@@ -7,7 +7,7 @@ import { ProductsSwiperInterface } from "@/interface";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export function ProductsSwiper({ products, title }: ProductsSwiperInterface) {
-  const { swiper, setSwiper, swiperPosition, setSwiperChanger } = useSwiper();
+  const { swiper, setSwiper, swiperPosition, changeSwiper } = useSwiper();
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
@@ -33,7 +33,7 @@ export function ProductsSwiper({ products, title }: ProductsSwiperInterface) {
       </div>
       <Swiper
         onSwiper={(swiper) => setSwiper(swiper)}
-        onSlideChange={() => setSwiperChanger((prev) => prev + 1)}
+        onSlideChange={changeSwiper}
         className={`products__swiper--container ${
           swiperPosition.isEnd ? "end" : ""
         }`}
@@ -45,7 +45,7 @@ export function ProductsSwiper({ products, title }: ProductsSwiperInterface) {
           dragClass: "products__swiper--scrollbar",
           dragSize: 480,
         }}
-        onScrollbarDragMove={() => setSwiperChanger((prev) => prev + 1)}
+        onScrollbarDragMove={changeSwiper}
         slidesPerView={3}
         slidesOffsetAfter={-140}
       >

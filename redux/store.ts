@@ -1,10 +1,12 @@
 "use client";
 import { configureStore } from "@reduxjs/toolkit";
+import LayoutSlice from "./slices/layoutSlice";
 import AdminNavMobileSlice from "./slices/AdminNavMobileSlice";
 
 const store = configureStore({
   reducer: {
     adminNavMobile: AdminNavMobileSlice,
+    layout: LayoutSlice,
   },
 });
 

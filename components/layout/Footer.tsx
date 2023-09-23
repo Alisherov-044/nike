@@ -37,7 +37,11 @@ export function Footer() {
             <li className="footer__link--container main">
               {footerLinks.map(({ id, label, link, isMain }) =>
                 isMain ? (
-                  <Link href={link} className="footer__link header" key={id}>
+                  <Link
+                    href={link}
+                    className="footer__link footer__link--header"
+                    key={id}
+                  >
                     {label}
                   </Link>
                 ) : null
@@ -54,7 +58,10 @@ export function Footer() {
                     setActiveLink(activeLink === id ? undefined : id)
                   }
                 >
-                  <Link href={link} className="footer__link header">
+                  <Link
+                    href={link}
+                    className="footer__link footer__link--header"
+                  >
                     {label}
                   </Link>
                   {children &&
