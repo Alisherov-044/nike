@@ -1,3 +1,3 @@
-import { categoryService } from "./categoryService";
+import { CategoryService } from "./categoryService";
 
-export { categoryService };
+export { CategoryService };

@@ -10,6 +10,7 @@
 @import './components/form/input';
 @import './components/form/textarea';
 @import './components/form/select';
+@import './components/form/checkbox';
 @import './components/form/upload';
 @import './components/ui/table';
 @import './components/ui/pagination';
@@ -17,10 +18,14 @@
 @import './components/admin/admin';
 @import './components/layout/header';
 @import './components/layout/footer';
+@import './components/layout/section';
+@import './components/layout/sidebar';
 @import './components/card/productCard';
-@import './components/card/categoryCard';
+@import './components/card/categoryCardSm';
+@import './components/card/categoryCardMd';
 @import './components/swiper/productsSwiper';
-@import './components/swiper/categoriesSwiper';
+@import './components/swiper/categoriesSwiperSm';
+@import './components/swiper/categoriesSwiperMd';
 
 /* pages */
 @import './pages/home/home';

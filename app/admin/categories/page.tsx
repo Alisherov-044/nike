@@ -9,341 +9,18 @@ import {
   Table,
   Upload,
 } from "@/components";
-import { usePagination } from "@/hooks";
-import { categoryService } from "@/services";
 import { useState } from "react";
-
-const categories = [
-  {
-    id: 1,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 2,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [
-      {
-        id: 33,
-        name: "Men",
-        link: "/category/men",
-        slug: "men",
-        children: [
-          {
-            id: 37,
-            name: "Men",
-            link: "/category/men",
-            slug: "men",
-            children: [],
-          },
-          {
-            id: 38,
-            name: "Men",
-            link: "/category/men",
-            slug: "men",
-            children: [],
-          },
-          {
-            id: 39,
-            name: "Men",
-            link: "/category/men",
-            slug: "men",
-            children: [],
-          },
-        ],
-      },
-      {
-        id: 34,
-        name: "Men",
-        link: "/category/men",
-        slug: "men",
-        children: [],
-      },
-      {
-        id: 35,
-        name: "Men",
-        link: "/category/men",
-        slug: "men",
-        children: [],
-      },
-      {
-        id: 36,
-        name: "Men",
-        link: "/category/men",
-        slug: "men",
-        children: [],
-      },
-    ],
-  },
-  {
-    id: 3,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [
-      {
-        id: 34,
-        name: "Men",
-        link: "/category/men",
-        slug: "men",
-        children: [],
-      },
-      {
-        id: 34,
-        name: "Men",
-        link: "/category/men",
-        slug: "men",
-        children: [],
-      },
-    ],
-  },
-  {
-    id: 4,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 5,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 6,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 7,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 8,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 9,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 10,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 11,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 12,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 13,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 14,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 15,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 16,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 17,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 18,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 19,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 20,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 21,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 22,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 23,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 24,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 25,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 26,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 27,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 28,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 29,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 30,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 31,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-  {
-    id: 32,
-    parentId: 0,
-    name: "Men",
-    link: "/category/men",
-    slug: "men",
-    children: [],
-  },
-];
+import { usePagination } from "@/hooks";
+import { CategoryService } from "@/services";
+import { useCategoryContext } from "@/context";
 
 export default function AdminCategories() {
+  const { categories } = useCategoryContext();
   const [isUpload, setIsUpload] = useState<boolean>(false);
   const {
     modal: { isOpen, open, close },
     form: { onSubmit, handleSubmit, register, setValue },
-  } = categoryService();
+  } = CategoryService();
   const {
     currentData,
     pages,
@@ -365,12 +42,11 @@ export default function AdminCategories() {
       </div>
       <div className="admin__table--wrapper">
         <Table
-          header={["id", "name", "link", "slug"]}
+          header={["id", "name", "slug"]}
           data={currentData}
           link="/admin/categories"
           slug="id"
           className="admin__table"
-          nested="children"
         />
         <Pagination
           pages={pages}
@@ -388,7 +64,11 @@ export default function AdminCategories() {
         >
           {isUpload ? (
             <div className="admin__categories--image-form__container">
-              <Input placeholder="Image" />
+              <Input
+                placeholder="Image"
+                name="image"
+                register={register("image", { required: true })}
+              />
               <Button
                 type="button"
                 text="Save"
@@ -401,7 +81,10 @@ export default function AdminCategories() {
               onSubmit={handleSubmit(onSubmit)}
               className="admin__categories--form"
             >
-              <Input placeholder="Name" register={register("name")} />
+              <Input
+                placeholder="Name"
+                register={register("name", { required: true })}
+              />
               <Select
                 placeholder="Parent"
                 options={[{ id: 0, name: "Itself" }, ...currentData]}
@@ -410,11 +93,6 @@ export default function AdminCategories() {
                 nested="children"
                 name="parentId"
                 setValue={setValue}
-              />
-              <Input
-                placeholder="Link"
-                parentClassName="sm-full"
-                register={register("link")}
               />
               <Upload placeholder="Image" onClick={() => setIsUpload(true)} />
             </Form>

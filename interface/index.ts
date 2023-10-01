@@ -6,6 +6,7 @@ import { InputInterface } from "./components.interface";
 import { FormInterface } from "./components.interface";
 import { TextareaInterface } from "./components.interface";
 import { SelectInterface } from "./components.interface";
+import { CheckboxInterface } from "./components.interface";
 import { UploadInterface } from "./components.interface";
 import { PaginationInterface } from "./components.interface";
 import { ModalInterface } from "./components.interface";
@@ -19,12 +20,18 @@ import { FooterLinkInterface } from "./data.interface";
 import { ProductsSwiperInterface } from "./components.interface";
 import { CategoriesSwiperInterface } from "./components.interface";
 import { FooterPrivacyLinkInterface } from "./data.interface";
-import { SponserInterface } from "./data.interface";
+import { SponsorInterface } from "./data.interface";
 import { AdminNavbarMobileInterface } from "./components.interface";
 import { ProviderInterface } from "./redux.interface";
 import { ProductCardInterface } from "./components.interface";
-import { CategoryCardInterface } from "./components.interface";
+import { CategoryCardSmInterface } from "./components.interface";
+import { CategoryCardMdInterface } from "./components.interface";
 import { ScrollPositionInterface } from "./hooks.interface";
+import { SectionInterface } from "./components.interface";
+import { ContextProviderInterface } from "./context.interface";
+import { CategoryContextInterface } from "./context.interface";
+import { SidebarInterface } from "./components.interface";
+import { LinkInterface as SidebarLinkInterface } from "./components.interface";
 
 export type {
   ButtonInterface,
@@ -35,6 +42,7 @@ export type {
   FormInterface,
   TextareaInterface,
   SelectInterface,
+  CheckboxInterface,
   UploadInterface,
   PaginationInterface,
   ModalInterface,
@@ -48,10 +56,16 @@ export type {
   ProductsSwiperInterface,
   CategoriesSwiperInterface,
   FooterPrivacyLinkInterface,
-  SponserInterface,
+  SponsorInterface,
   AdminNavbarMobileInterface,
   ProviderInterface,
   ProductCardInterface,
-  CategoryCardInterface,
+  CategoryCardSmInterface,
+  CategoryCardMdInterface,
   ScrollPositionInterface,
+  SectionInterface,
+  ContextProviderInterface,
+  CategoryContextInterface,
+  SidebarInterface,
+  SidebarLinkInterface,
 };

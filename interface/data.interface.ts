@@ -21,8 +21,9 @@ export interface FooterPrivacyLinkInterface extends LinkInterface {
   children?: LinkInterface[];
 }
 
-export interface SponserInterface {
+export interface SponsorInterface {
   id: number;
   link: string;
+  name?: string;
   Icon: FC;
 }

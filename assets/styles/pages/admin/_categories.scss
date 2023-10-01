@@ -28,4 +28,12 @@
       }
     }
   }
+
+  &--image-form__container {
+    @include d-flex(column, unset, unset, 20px);
+
+    .button {
+      justify-content: center;
+    }
+  }
 }

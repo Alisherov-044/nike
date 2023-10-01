@@ -40,7 +40,7 @@ export function Select({
     if (setFormValue && name) {
       setFormValue(name, selectedValue);
     }
-  }, [selectedValue]);
+  }, [selectedValue, name, setFormValue]);
 
   return (
     <div className={`select__wrapper ${isOpen ? "open" : ""}`}>

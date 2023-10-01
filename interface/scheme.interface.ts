@@ -15,7 +15,6 @@ export interface CategoryScheme {
   id: number;
   parentId: number;
   name: string;
-  link: string;
   slug: string;
   image?: string;
   children: CategoryScheme[] | [];

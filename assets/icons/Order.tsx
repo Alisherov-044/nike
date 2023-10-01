@@ -15,13 +15,13 @@ export function OrderIcon({ className, ...rest }: ComponentProps<"svg">) {
         d="M14.25 3.75C13.01 3.75 12 4.76 12 6.5V13.5M20.25 9.75H3.75"
         stroke="black"
         strokeWidth="1.5"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
       <path
         d="M14.25 3.75H18.64L20.25 9.75V20.25H3.75V9.75L5.36 3.75H10.5"
         stroke="black"
         strokeWidth="1.5"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
     </svg>
   );

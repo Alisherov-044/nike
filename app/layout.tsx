@@ -4,6 +4,7 @@ import { LayoutInterface } from "@/interface";
 import { Providers } from "@/redux/Provider";
 import { Footer, Header } from "@/components";
 import { Inter } from "next/font/google";
+import { CategoryProvider } from "@/context";
 
 export const metadata: Metadata = {
   title: "Nike. Just Do It",
@@ -29,9 +30,11 @@ export default function RootLayout({ children }: LayoutInterface) {
       <body className={inter.className}>
         <div id="root">
           <Providers>
-            <Header />
-            {children}
-            <Footer />
+            <CategoryProvider>
+              <Header />
+              {children}
+              <Footer />
+            </CategoryProvider>
           </Providers>
         </div>
       </body>

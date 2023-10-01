@@ -1,4 +1,6 @@
 .button {
+  @include d-flex(row, center, unset, 10px);
+
   &.primary,
   &.secondary,
   &.secondary-outline {

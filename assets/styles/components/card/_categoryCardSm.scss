@@ -1,7 +1,11 @@
-.category__card {
+.category__card--sm {
   @include d-flex(column, unset, unset, 10px);
   position: relative;
   width: 300px;
+
+  @include media(570) {
+    width: 100%;
+  }
 
   &--index {
     @include font(16px, 120%, 400);

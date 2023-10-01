@@ -1,15 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 import { formatCurrency } from "@/utils";
 import { ProductCardInterface } from "@/interface";
+import { categories } from "@/data";
+import { useSpreadCategories } from "@/hooks";
 
 export function ProductCard({ product }: ProductCardInterface) {
   const { name, category, price, images, slug } = product;
-  const categories = [{ id: 1, name: "Men's Shoes" }];
+  const { spreadCategories } = useSpreadCategories();
 
   return (
     <Link href={`/products/${slug}`} className="product__card">
       <div className="product__card--image">
-        <img src={images.find((image) => image.isDefault)?.image} alt={name} />
+        <Image
+          src={images.find((image) => image.isDefault)?.image!}
+          width={600}
+          height={600}
+          alt={name}
+        />
       </div>
       <div className="product__card--content">
         <div className="product__card--content-row">
@@ -17,7 +25,7 @@ export function ProductCard({ product }: ProductCardInterface) {
           <span className="product__card--price">{formatCurrency(price)}</span>
         </div>
         <span className="product__card--category">
-          {categories.find((item) => item.id === category)?.name}
+          {spreadCategories.find((item) => item.id === category)?.name}
         </span>
       </div>
     </Link>

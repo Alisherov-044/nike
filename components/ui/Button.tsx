@@ -1,6 +1,6 @@
 "use client";
-import { ButtonInterface } from "@/interface";
 import Link from "next/link";
+import { ButtonInterface } from "@/interface";
 
 export function Button({
   text,

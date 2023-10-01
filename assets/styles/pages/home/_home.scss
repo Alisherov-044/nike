@@ -25,6 +25,7 @@
     @include d-flex(column, center, space-between);
     height: 190px;
     margin-block: 48px;
+    padding-inline: 10px;
 
     &--title {
       @include font(72px, 90%, 900);
@@ -36,6 +37,20 @@
     &--description {
       @include font(20px, 120%, 400);
       color: $color-black--regular;
+    }
+
+    @include media(834) {
+      height: 150px;
+
+      &--title {
+        @include font(48px, 110%, 900);
+        letter-spacing: 0;
+      }
+
+      &--description {
+        text-align: center;
+        font-size: 16px;
+      }
     }
   }
 
@@ -52,5 +67,17 @@
 
   .products__section {
     padding-top: 16px;
+  }
+
+  .categories__section--md {
+    padding-top: 32px;
+  }
+
+  .shop-by-sport__section {
+    padding-top: 96px;
+  }
+
+  .nike-membership__section {
+    padding-top: 84px;
   }
 }

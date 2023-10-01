@@ -8,58 +8,39 @@
   }
 }
 
-.products__section {
-  @include d-flex(column, unset, unset, 12px);
-  position: relative;
+.products__swiper--container {
+  width: 100vw;
+  overflow-x: hidden;
+}
 
-  &--header {
-    @include d-flex(row, center, space-between, 12px);
-    padding-inline: 48px;
-  }
+.products__swiper {
+  @include d-flex(row, unset, unset, 12px);
+  padding-left: 48px;
+  padding-bottom: 30px;
 
-  &--title {
-    @include font(26px, 120%, 500);
-    color: $color-black--regular;
-  }
+  &--scrollbar__container {
+    @include d-flex(row, flex-end, unset);
+    width: 100%;
+    height: 5px;
 
-  .products__swiper--buttons {
-    @include d-flex(row, center, unset, 12px);
-  }
-
-  .products__swiper--container {
-    width: 100vw;
-    overflow-x: hidden;
-  }
-  
-  .products__swiper {
-    @include d-flex(row, unset, unset, 12px);
-    padding-left: 48px;
-    padding-bottom: 30px;
-
-    &--scrollbar__container {
-      @include d-flex(row, flex-end, unset);
-      width: 100%;
-      height: 5px;
-
-      &:hover {
-        .products__swiper--scrollbar {
-          height: 3px;
-        }
+    &:hover {
+      .products__swiper--scrollbar {
+        height: 3px;
       }
     }
+  }
 
-    &--scrollbar {
-      width: 480px;
-      height: 2px;
-      background-color: $color-black--regular;
+  &--scrollbar {
+    width: 480px;
+    height: 2px;
+    background-color: $color-black--regular;
 
-      &.active {
-        opacity: 1;
-      }
+    &.active {
+      opacity: 1;
+    }
 
-      &.disactive {
-        animation: disappear .5s ease 1s forwards;
-      }
+    &.disactive {
+      animation: disappear .5s ease 1s forwards;
     }
   }
 }

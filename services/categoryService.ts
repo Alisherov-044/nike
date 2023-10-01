@@ -1,9 +1,14 @@
 "use client";
+import slugify from "slugify";
 import { useModal } from "@/hooks";
-import { CategoryScheme } from "@/interface/scheme.interface";
 import { useForm } from "react-hook-form";
+import { CategoryScheme } from "@/interface/scheme.interface";
+import { categoriesUrl } from "@/utils/urls";
+import { usePostRequest } from "@/hooks/api/usePostRequest";
+import { useCategoryContext } from "@/context";
 
-export function categoryService() {
+export function CategoryService() {
+  const { setCategory } = useCategoryContext();
   const { isOpen, open, close } = useModal();
   const {
     register,
@@ -12,9 +17,17 @@ export function categoryService() {
     reset,
     setValue,
   } = useForm<CategoryScheme>();
+  const { postRequest } = usePostRequest<CategoryScheme>();
 
-  const onSubmit = (e: CategoryScheme) => {
-    console.log(e);
+  const onSubmit = async (e: CategoryScheme) => {
+    await console.log(e);
+    const result = await postRequest(categoriesUrl, {
+      ...e,
+      slug: slugify(e.name.toLowerCase()),
+    });
+    await setCategory?.(result.response!);
+    reset();
+    close();
   };
 
   return {

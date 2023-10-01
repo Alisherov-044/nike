@@ -8,6 +8,8 @@ import { CartIcon } from "./Cart";
 import { FilterIcon } from "./Filter";
 import { BurgerIcon } from "./Burger";
 import { UserIcon } from "./User";
+import { EyeIcon } from "./Eye";
+import { CheckIcon } from "./Check";
 import { OrderIcon } from "./Order";
 import { DestinationIcon } from "./Destination";
 import { HelpIcon } from "./Help";
@@ -29,6 +31,8 @@ export {
   FilterIcon,
   BurgerIcon,
   UserIcon,
+  EyeIcon,
+  CheckIcon,
   OrderIcon,
   DestinationIcon,
   HelpIcon,

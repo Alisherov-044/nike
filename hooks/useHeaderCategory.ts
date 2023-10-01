@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { useDropdown, useTypedDispatch } from ".";
 import { setBgBlur } from "@/redux/slices/layoutSlice";

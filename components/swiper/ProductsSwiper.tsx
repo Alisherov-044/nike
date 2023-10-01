@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useSwiper } from "@/hooks";
 import { Scrollbar } from "swiper/modules";
-import { ProductCard, SwiperButton } from "..";
+import { ProductCard, Section, SwiperButton } from "..";
 import { ProductsSwiperInterface } from "@/interface";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,14 +11,13 @@ export function ProductsSwiper({ products, title }: ProductsSwiperInterface) {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
-    <section
+    <Section
       className="products__section"
+      title={title}
       onMouseOver={() => setIsActive(true)}
       onMouseOut={() => setIsActive(false)}
-    >
-      <div className="products__section--header">
-        <h1 className="products__section--title">{title}</h1>
-        <div className="products__swiper--buttons">
+      swiperBtns={
+        <>
           <SwiperButton
             className={`${swiperPosition.isBeginning ? "disabled" : ""}`}
             direction="left"
@@ -29,8 +28,9 @@ export function ProductsSwiper({ products, title }: ProductsSwiperInterface) {
             direction="right"
             onClick={() => swiper?.slideNext()}
           />
-        </div>
-      </div>
+        </>
+      }
+    >
       <Swiper
         onSwiper={(swiper) => setSwiper(swiper)}
         onSlideChange={changeSwiper}
@@ -62,6 +62,6 @@ export function ProductsSwiper({ products, title }: ProductsSwiperInterface) {
           ></div>
         </div>
       </Swiper>
-    </section>
+    </Section>
   );
 }

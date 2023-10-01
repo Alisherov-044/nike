@@ -80,7 +80,7 @@ export function Table({
           className={`table__row--link ${addClass(item, child)}`}
           key={index}
         >
-          {nested && item[nested].length ? (
+          {nested && item?.[nested]?.length ? (
             <span className="plus" onClick={() => openTable(item, child)}>
               {checkContent(item, child) ? "-" : "+"}
             </span>
@@ -88,7 +88,7 @@ export function Table({
           <Link href={`${link}/${item[slug]}`} className="table__row">
             <HeaderList header={header} item={item} className="table__data" />
           </Link>
-          {nested && item[nested].length ? (
+          {nested && item?.[nested]?.length ? (
             <div className="children">
               <TableContent data={item[nested]} child={true} />
             </div>

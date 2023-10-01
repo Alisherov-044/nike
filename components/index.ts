@@ -9,13 +9,18 @@ import { Form } from "./form/Form";
 import { Input } from "./form/Input";
 import { Textarea } from "./form/Textarea";
 import { Select } from "./form/Select";
+import { Checkbox } from "./form/Checkbox";
 import { Upload } from "./form/Upload";
 import { Header } from "./layout/Header";
 import { Footer } from "./layout/Footer";
+import { Section } from "./layout/Section";
+import { Sidebar } from "./layout/Sidebar";
 import { ProductCard } from "./card/ProductCard";
-import { CategoryCard } from "./card/CategoryCard";
+import { CategoryCardSm } from "./card/CategoryCardSm";
+import { CategoryCardMd } from "./card/CategoryCardMd";
 import { ProductsSwiper } from "./swiper/ProductsSwiper";
-import { CategoriesSwiper } from "./swiper/CategoriesSwiper";
+import { CategoriesSwiperSm } from "./swiper/CategoriesSwiperSm";
+import { CategoriesSwiperMd } from "./swiper/CategoriesSwiperMd";
 
 export {
   Button,
@@ -29,11 +34,16 @@ export {
   Input,
   Textarea,
   Select,
+  Checkbox,
   Upload,
   Header,
   Footer,
+  Section,
+  Sidebar,
   ProductCard,
-  CategoryCard,
+  CategoryCardSm,
+  CategoryCardMd,
   ProductsSwiper,
-  CategoriesSwiper,
+  CategoriesSwiperSm,
+  CategoriesSwiperMd,
 };

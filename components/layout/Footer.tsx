@@ -10,10 +10,10 @@ import {
 import { useState } from "react";
 import { LocationIcon } from "@/assets/icons";
 import { footerLinks, footerPrivacyLinks } from "@/data";
-import { useFooterlessPages } from "@/hooks";
+import { useFootlessPages } from "@/hooks";
 
 export function Footer() {
-  const { isFooterless } = useFooterlessPages();
+  const { isFootless } = useFootlessPages();
   const [activeLink, setActiveLink] = useState<number | undefined>(undefined);
   const [activePrivacyLink, setActivePrivacyLink] = useState<
     number | undefined
@@ -25,7 +25,7 @@ export function Footer() {
 
   const socialIcons = [TwitterIcon, FacebookIcon, YouTubeIcon, InstagramIcon];
 
-  if (isFooterless) {
+  if (isFootless) {
     return null;
   }
 

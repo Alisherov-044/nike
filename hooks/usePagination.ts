@@ -3,18 +3,16 @@ import { useEffect, useState } from "react";
 
 export function usePagination(data: object[], dataPerPage: number = 8) {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [{ firstPage, lastPage, totalPages }] = useState({
+  const [{ firstPage, lastPage }] = useState({
     firstPage: 1,
     lastPage: Math.ceil(data.length / dataPerPage),
-    totalPages: Math.ceil(data.length / dataPerPage),
   });
-  const [{ firstIndexOf, lastIndexOf }] = useState({
+  const [{ firstIndexOf, lastIndexOf }, setPosition] = useState({
     firstIndexOf: currentPage * dataPerPage - dataPerPage,
     lastIndexOf: currentPage * dataPerPage,
   });
   const [currentData, setCurrentData] = useState<object[]>([]);
-
-  const pages: number[] = [];
+  const [pages, setPages] = useState<number[]>([]);
 
   useEffect(() => {
     setCurrentData(
@@ -23,11 +21,21 @@ export function usePagination(data: object[], dataPerPage: number = 8) {
         currentPage * dataPerPage
       )
     );
-  }, [currentPage]);
+  }, [data, currentPage]);
 
-  for (let i = 1; i <= totalPages; i++) {
-    pages.push(i);
-  }
+  useEffect(() => {
+    const res = [];
+
+    for (let i = 1; i <= Math.ceil(data.length / dataPerPage); i++) {
+      res.push(i);
+    }
+    setPages(res);
+
+    setPosition({
+      firstIndexOf: currentPage * dataPerPage - dataPerPage,
+      lastIndexOf: currentPage * dataPerPage,
+    });
+  }, [data]);
 
   const paginate = (page: number) => {
     setCurrentPage(page);
@@ -35,7 +43,9 @@ export function usePagination(data: object[], dataPerPage: number = 8) {
 
   const nextPage = () => {
     setCurrentPage((currentPage) =>
-      currentPage !== lastPage ? currentPage + 1 : lastPage
+      currentPage !== Math.ceil(data.length / dataPerPage)
+        ? currentPage + 1
+        : Math.ceil(data.length / dataPerPage)
     );
   };
 
@@ -47,7 +57,6 @@ export function usePagination(data: object[], dataPerPage: number = 8) {
     currentPage,
     firstPage,
     lastPage,
-    totalPages,
     pages,
     paginate,
     nextPage,

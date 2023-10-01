@@ -1,0 +1,17 @@
+.section {
+  @include d-flex(column, unset, unset, 12px);
+
+  &--header {
+    @include d-flex(row, center, space-between, 12px);
+    padding-inline: 48px;
+  }
+
+  &--title {
+    @include font(26px, 120%, 500);
+    color: $color-black--regular;
+  }
+
+  .swiper--buttons {
+    @include d-flex(row, center, unset, 12px);
+  }
+}
