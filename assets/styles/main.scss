@@ -20,6 +20,7 @@
 @import './components/layout/footer';
 @import './components/layout/section';
 @import './components/layout/sidebar';
+@import './components/card/adsCard';
 @import './components/card/productCard';
 @import './components/card/categoryCardSm';
 @import './components/card/categoryCardMd';
@@ -31,3 +32,4 @@
 @import './pages/home/home';
 @import './pages/admin/products';
 @import './pages/admin/categories';
+@import './pages/auth/login/login';

@@ -4,6 +4,10 @@
   &--header {
     @include d-flex(row, center, space-between, 12px);
     padding-inline: 48px;
+
+    @include media(960) {
+      padding-inline: 24px;
+    }
   }
 
   &--title {

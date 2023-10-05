@@ -2,10 +2,12 @@
 import Link from "next/link";
 import { useSidebar, useTypedSelector } from "@/hooks";
 import {
+  ADsCard,
   Button,
   CategoriesSwiperMd,
   CategoriesSwiperSm,
   ProductsSwiper,
+  Section,
   Sidebar,
 } from "@/components";
 import {
@@ -52,16 +54,24 @@ export default function Home() {
       </Link>
       <CategoriesSwiperSm categories={categorySlides} />
       <ProductsSwiper products={products} title="Trending This Week" />
-      {/* <CategoriesSwiperMd
+      <CategoriesSwiperMd
         categories={categories.filter((category) => category.image)}
         className="more-to-explore__section"
         title="More to Explore"
-      /> */}
+      />
       <CategoriesSwiperSm
         categories={sportCategorySlides}
         className="shop-by-sport__section"
         title="Shop By Sport"
       />
+      <Section className="nike-app" title="Discover Our Apps">
+        <ADsCard
+          image="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1814,c_limit/7b640288-2d01-4a32-b2d9-658dfc386094/nike-just-do-it.png"
+          title="Get the latest in the Nike App"
+          link="/nike-app"
+          button={<Button variant="secondary" text="Nike App" />}
+        />
+      </Section>
       <CategoriesSwiperSm
         categories={memberCategorySlides}
         className="nike-membership__section"

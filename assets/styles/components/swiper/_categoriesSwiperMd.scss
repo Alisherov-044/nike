@@ -2,6 +2,19 @@
   @include d-flex(row, unset, unset, 12px);
   padding-inline: 48px;
 
+  @include media(960) {
+    padding-inline: 24px;
+    padding-bottom: 24px;
+    overflow-x: scroll;
+  }
+
+  @include media(580) {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   .category__card--md {
     &:nth-of-type(1) {
       order: 2;

@@ -80,4 +80,42 @@
   .nike-membership__section {
     padding-top: 84px;
   }
+
+  .nike-app {
+    margin-top: 48px;
+
+    .ads__card {
+      padding-inline: 48px;
+    }
+  }
+
+  @include media(960) {
+    .categories__section {
+      padding-top: 8px;
+    }
+  
+    .products__section {
+      padding-top: 8px;
+    }
+  
+    .categories__section--md {
+      padding-top: 16px;
+    }
+  
+    .shop-by-sport__section {
+      padding-top: 24px;
+    }
+  
+    .nike-membership__section {
+      padding-top: 24px;
+    }
+
+    .nike-app {
+      margin-top: 24px;
+
+      .ads__card {
+        padding-inline: 24px;
+      }
+    }
+  }
 }

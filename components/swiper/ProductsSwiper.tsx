@@ -43,11 +43,18 @@ export function ProductsSwiper({ products, title }: ProductsSwiperInterface) {
           el: ".products__swiper--scrollbar__container",
           draggable: true,
           dragClass: "products__swiper--scrollbar",
-          dragSize: 480,
+          dragSize: "auto",
         }}
         onScrollbarDragMove={changeSwiper}
-        slidesPerView={3}
-        slidesOffsetAfter={-140}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          961: {
+            slidesPerView: 3,
+            slidesOffsetAfter: 140,
+          },
+        }}
       >
         {products.map((product) => (
           <SwiperSlide className="products__swiper--slide" key={product.id}>

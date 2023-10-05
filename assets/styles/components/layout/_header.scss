@@ -8,6 +8,10 @@
     position: sticky;
     top: -$header-top--height;
     transform: translateY(-100%);
+
+    @include media(834) {
+      top: 0;
+    }
   }
   
   &.active {

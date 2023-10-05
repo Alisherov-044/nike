@@ -15,6 +15,7 @@ import { Header } from "./layout/Header";
 import { Footer } from "./layout/Footer";
 import { Section } from "./layout/Section";
 import { Sidebar } from "./layout/Sidebar";
+import { ADsCard } from "./card/ADsCard";
 import { ProductCard } from "./card/ProductCard";
 import { CategoryCardSm } from "./card/CategoryCardSm";
 import { CategoryCardMd } from "./card/CategoryCardMd";
@@ -40,6 +41,7 @@ export {
   Footer,
   Section,
   Sidebar,
+  ADsCard,
   ProductCard,
   CategoryCardSm,
   CategoryCardMd,

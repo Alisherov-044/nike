@@ -26,6 +26,7 @@ import { ProviderInterface } from "./redux.interface";
 import { ProductCardInterface } from "./components.interface";
 import { CategoryCardSmInterface } from "./components.interface";
 import { CategoryCardMdInterface } from "./components.interface";
+import { ADsCardInterface } from "./components.interface";
 import { ScrollPositionInterface } from "./hooks.interface";
 import { SectionInterface } from "./components.interface";
 import { ContextProviderInterface } from "./context.interface";
@@ -62,6 +63,7 @@ export type {
   ProductCardInterface,
   CategoryCardSmInterface,
   CategoryCardMdInterface,
+  ADsCardInterface,
   ScrollPositionInterface,
   SectionInterface,
   ContextProviderInterface,

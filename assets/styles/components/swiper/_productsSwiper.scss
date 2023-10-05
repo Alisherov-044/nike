@@ -8,9 +8,22 @@
   }
 }
 
+.products__section .section--header {
+  .swiper--buttons {
+    @include media(600) {
+      display: none;
+    }
+  }
+}
+
 .products__swiper--container {
+  position: relative;
   width: 100vw;
   overflow-x: hidden;
+
+  @include media(960) {
+    padding-bottom: 40px;
+  }
 }
 
 .products__swiper {
@@ -18,10 +31,20 @@
   padding-left: 48px;
   padding-bottom: 30px;
 
+  @include media(960) {
+    padding-left: 24px;
+  }
+
   &--scrollbar__container {
     @include d-flex(row, flex-end, unset);
     width: 100%;
     height: 5px;
+
+    @include media(960) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
 
     &:hover {
       .products__swiper--scrollbar {
@@ -31,7 +54,7 @@
   }
 
   &--scrollbar {
-    width: 480px;
+    width: calc(100vw / 4) !important;
     height: 2px;
     background-color: $color-black--regular;
 

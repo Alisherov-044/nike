@@ -95,12 +95,13 @@
         &.open {
           height: auto;
 
-          .footer__link.header::after {
+          .footer__link.footer__link--header::after {
             content: '-';
           }
         }
 
-        .footer__link.header {
+        .footer__link.footer__link--header {
+          position: relative;
           pointer-events: none;
 
           &::after {
@@ -110,6 +111,7 @@
             top: 50%;
             right: 0;
             transform: translateY(-50%);
+            color: $color-white--regular;
           }
         }
       }

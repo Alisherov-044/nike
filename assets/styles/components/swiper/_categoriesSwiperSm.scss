@@ -32,6 +32,10 @@
       &--name {
         opacity: 0;
         transition: all .2s ease;
+
+        @include media(834) {
+          display: none;
+        }
       }
     }
 

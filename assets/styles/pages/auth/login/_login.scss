@@ -1,0 +1,80 @@
+.login__page {
+  @include d-flex(row, unset, center);
+  position: relative;
+
+  .container {
+    max-width: 460px;
+    min-width: 250px;
+    width: 100%;
+    margin-inline: 36px;
+    padding: 0;
+  }
+
+  &--header {
+    @include d-flex(column, unset, unset);
+    height: 130px;
+  }
+
+  &--icons {
+    @include d-flex(row, center, unset);
+    flex-grow: 1;
+  }
+
+  &--logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  &--jordan {
+    width: 45px;
+    height: 45px;
+  }
+
+  &--title {
+    @include font(26px, 120%, 500);
+    color: $color-black--regular;
+  }
+
+  &--content {
+    .login__form {
+      .country__select {
+        @include d-flex(row, center, unset, 10px);
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 16px;
+
+        @include font(16px, 120%, 400);
+
+        .selector {
+          color: $color-grey--regular;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      &--description,
+      &--link {
+        @include font(16px, 150%, 400);
+        color: $color-grey--regular;
+      }
+
+      &--description {
+        margin-block: 24px;
+      }
+
+      &--link {
+        text-decoration: underline;
+      }
+
+      &--button {
+        float: right;
+        padding: 12px 24px;
+
+        @include media(400) {
+          @include d-flex-center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

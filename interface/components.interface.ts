@@ -134,6 +134,13 @@ export interface CategoryCardMdInterface {
   category: CategoryScheme;
 }
 
+export interface ADsCardInterface {
+  image: string;
+  link: string;
+  title: string;
+  button: ReactNode;
+}
+
 export interface SwiperButtonInterface
   extends Pick<EventsInterface, "onClick"> {
   variant?: "md" | "sm";

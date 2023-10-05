@@ -45,7 +45,8 @@
     }
 
     &.secondary {
-      width: 460px;
+      max-width: 460px;
+      width: 100%;
       height: 56px;
       border: 1px solid $color-black--regular;
       color: $color-black--regular;

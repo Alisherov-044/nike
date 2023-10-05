@@ -1,0 +1,40 @@
+.ads__card {
+  position: relative;
+  width: 100%;
+  height: 405px;
+
+  &--image,
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--content {
+    @include d-flex(column, unset, unset, 24px);
+    position: absolute;
+    left: 48px;
+    bottom: 48px;
+    padding-inline: 48px;
+
+    @include media(960) {
+      padding-inline: 24px;
+    }
+
+    @include media(800) {
+      left: 20px;
+      bottom: 20px;
+    }
+
+    .button {
+      width: fit-content;
+      font-weight: 600;
+      padding: 10px 20px;
+    }
+  }
+
+  &--title {
+    @include font(20px, 120%, 400);
+    color: $color-white--regular;
+  }
+}
